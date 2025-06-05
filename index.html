@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Resume - David Song</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #1f2937; /* Dark gray background (Tailwind gray-800) */
+            color: #d1d5db; /* Light gray text for body (Tailwind gray-300) */
+        }
+        .section-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-out, padding 0.5s ease-out;
+            padding: 0 1.5rem; /* For smoother transition */
+        }
+        .section-content.open {
+            max-height: 1500px; /* Adjust as needed, large enough for content */
+            padding: 1rem 1.5rem 1.5rem 1.5rem; /* Add padding back when open */
+        }
+        .section-title:hover {
+            background-color: #4b5563; /* Slightly lighter dark gray on hover (Tailwind gray-600) */
+        }
+        /* Custom bullet points */
+        .custom-ul li {
+            position: relative;
+            padding-left: 1.5em; /* space for the bullet */
+            margin-bottom: 0.5em;
+        }
+        .custom-ul li::before {
+            content: "\f054"; /* FontAwesome chevron right */
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            top: 0.1em; /* Adjust vertical alignment */
+            color: #818cf8; /* Lighter Indigo color for bullets (Tailwind indigo-400) */
+            font-size: 0.8em;
+        }
+        .card-bg {
+            background-color: #374151; /* Medium dark gray for cards (Tailwind gray-700) */
+        }
+        .header-bg {
+            background-color: #374151; /* Medium dark gray for header */
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <div class="container mx-auto p-4 sm:p-6 lg:p-8 max-w-4xl">
+        <!-- Header -->
+        <header class="text-center mb-8 header-bg p-6 rounded-lg shadow-lg">
+            <h1 class="text-4xl font-bold text-indigo-400">DAVID SONG</h1>
+            <p class="text-xl text-gray-400">1st Lieutenant, USAF</p>
+            <a href="https://github.com/davidsxng" target="_blank" rel="noopener noreferrer" class="mt-2 inline-block text-indigo-400 hover:text-indigo-300 transition-colors">
+                <i class="fab fa-github mr-2"></i>GitHub Portfolio
+            </a>
+        </header>
+
+        <!-- Sections Container -->
+        <div class="space-y-6">
+            <!-- Academics Section -->
+            <div class="card-bg rounded-lg shadow-md overflow-hidden">
+                <button class="section-title w-full text-left p-4 sm:p-6 focus:outline-none transition-colors duration-200 ease-in-out">
+                    <div class="flex justify-between items-center">
+                        <h2 class="text-2xl font-semibold text-indigo-400">Academics</h2>
+                        <i class="fas fa-chevron-down transform transition-transform duration-300 text-gray-400"></i>
+                    </div>
+                </button>
+                <div class="section-content text-gray-300">
+                    <div class="mb-6">
+                        <h3 class="text-xl font-semibold text-gray-100 mb-2">U.S. Air Force Academy</h3>
+                        <p class="text-gray-400 italic">B.S. Electrical and Computer Engineering, Class of 2022</p>
+                        <ul class="custom-ul mt-2 text-gray-300">
+                            <li>Cumulative GPA: 3.60/4.0 | Academic Order of Merit: 157/1014</li>
+                            <li>Cadet Semester Exchange: Republic of Korea Air Force Academy (ROKAFA), Winter 2022</li>
+                            <li>Research in Neuromorphic Computing and AI hardware futures</li>
+                            <li>Capstone: Counter-UAS Project (OpenCV, TensorFlow, CUDA)</li>
+                            <li>CUDA Independent Study: Optimized blob detection algorithms for parallel GPU execution</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-100 mb-2">Georgia Institute of Technology</h3>
+                        <p class="text-gray-400 italic">OMSCS (Online MS in CS), Enrolled Winter 2024</p>
+                         <ul class="custom-ul mt-2 text-gray-300">
+                            <li>Focus: Artificial Intelligence, Machine Learning, and Applied Systems</li>
+                            <li>Courses: Robotics: AI Techniques, Network Science</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Flight & Training Experience Section -->
+            <div class="card-bg rounded-lg shadow-md overflow-hidden">
+                <button class="section-title w-full text-left p-4 sm:p-6 focus:outline-none transition-colors duration-200 ease-in-out">
+                    <div class="flex justify-between items-center">
+                        <h2 class="text-2xl font-semibold text-indigo-400">Flight & Training Experience</h2>
+                        <i class="fas fa-chevron-down transform transition-transform duration-300 text-gray-400"></i>
+                    </div>
+                </button>
+                <div class="section-content text-gray-300">
+                    <div class="mb-6">
+                        <h3 class="text-xl font-semibold text-gray-100 mb-2">ENJJPT – Euro-NATO Joint Jet Pilot Training</h3>
+                        <p class="text-gray-400 italic">May 2025 – May 2026 (Projected F-16 Follow-On)</p>
+                        <ul class="custom-ul mt-2 text-gray-300">
+                            <li>World’s only multi-nationally crewed and managed flying training program specifically chartered to produce combat pilots for NATO (Only ~200 graduates yearly)</li>
+                            <li>Demands a high level of self-directed study, rapid decision-making under pressure, exceptional situational awareness, and strong leadership and teamwork skills in a fast-paced, multinational environment</li>
+                        </ul>
+                    </div>
+                    <div class="mb-6">
+                        <h3 class="text-xl font-semibold text-gray-100 mb-2">Flight Test Engineering Capstone – Edwards AFB</h3>
+                        <p class="text-gray-400 italic">Spring 2022</p>
+                        <ul class="custom-ul mt-2 text-gray-300">
+                            <li>Collected and analyzed data aboard the T-38A in operational flight environments</li>
+                            <li>Delivered technical reports and briefings to Air Force evaluators and engineers</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-100 mb-2">Glider Instructor Pilot & Airmanship Leader – 94th Flying Training Squadron</h3>
+                        <p class="text-gray-400 italic">2020–2022</p>
+                        <ul class="custom-ul mt-2 text-gray-300">
+                            <li>Instructed over 150 glider sorties (~50 hours/week)</li>
+                            <li>Squadron Commander: Managed 150+ cadets and flight IPs, led training, morale, and operations</li>
+                            <li>Superintendent & Scheduler for AM-251 and AM-461; managed logistics, safety, evaluations</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Professional Experience Section -->
+            <div class="card-bg rounded-lg shadow-md overflow-hidden">
+                <button class="section-title w-full text-left p-4 sm:p-6 focus:outline-none transition-colors duration-200 ease-in-out">
+                    <div class="flex justify-between items-center">
+                        <h2 class="text-2xl font-semibold text-indigo-400">Professional Experience</h2>
+                        <i class="fas fa-chevron-down transform transition-transform duration-300 text-gray-400"></i>
+                    </div>
+                </button>
+                <div class="section-content text-gray-300">
+                    <div class="mb-6">
+                        <h3 class="text-xl font-semibold text-gray-100 mb-2">2nd Lieutenant, United States Air Force</h3>
+                        <p class="text-gray-400 italic">2022–Present</p>
+                        <ul class="custom-ul mt-2 text-gray-300">
+                            <li>Standardization & Evaluation Liaison Officer, 94 FTS: Technical liaison and program analyst for aircrew certification and performance tracking</li>
+                        </ul>
+                    </div>
+                    <div class="mb-6">
+                        <h3 class="text-xl font-semibold text-gray-100 mb-2">Course Developer – CS472: Autonomous Systems Integration, USAFA</h3>
+                        <p class="text-gray-400 italic">2023</p>
+                        <ul class="custom-ul mt-2 text-gray-300">
+                            <li>Collaborated with USAFA CS faculty to design a new autonomy curriculum</li>
+                            <li>Created, solved, and calibrated technical exercises; modeled integration of autonomy with real-world systems</li>
+                        </ul>
+                    </div>
+                    <div class="mb-6">
+                        <h3 class="text-xl font-semibold text-gray-100 mb-2">Intern, CUBIC Corporation – San Diego, CA</h3>
+                        <p class="text-gray-400 italic">Summer 2021</p>
+                        <ul class="custom-ul mt-2 text-gray-300">
+                            <li>Supported testing of JSILS for Navy F-35; reviewed SOWs, corrected schematic inconsistencies</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-100 mb-2">Branch Manager, Dragon Yong-In Martial Arts – Brambleton, VA</h3>
+                        <p class="text-gray-400 italic">Spring 2018</p>
+                        <ul class="custom-ul mt-2 text-gray-300">
+                            <li>Managed daily operations, updated CRM, instructed Tae Kwon Do (5 days/week)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+             <!-- Technical Skills Section -->
+            <div class="card-bg rounded-lg shadow-md overflow-hidden">
+                <button class="section-title w-full text-left p-4 sm:p-6 focus:outline-none transition-colors duration-200 ease-in-out">
+                    <div class="flex justify-between items-center">
+                        <h2 class="text-2xl font-semibold text-indigo-400">Technical Skills</h2>
+                        <i class="fas fa-chevron-down transform transition-transform duration-300 text-gray-400"></i>
+                    </div>
+                </button>
+                <div class="section-content text-gray-300">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div>
+                            <h4 class="text-lg font-medium text-gray-100 mb-1">Languages:</h4>
+                            <p class="text-gray-300">Python, C, CUDA, MATLAB, R</p>
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-medium text-gray-100 mb-1">Frameworks:</h4>
+                            <p class="text-gray-300">OpenCV, TensorFlow, PyTorch, Numba, Scikit-learn, Git, Jupyter</p>
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-medium text-gray-100 mb-1">Systems:</h4>
+                            <p class="text-gray-300">Embedded platforms, Linux environments, Jetson Nano, NVIDIA GPUs</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Projects & Research Section -->
+            <div class="card-bg rounded-lg shadow-md overflow-hidden">
+                <button class="section-title w-full text-left p-4 sm:p-6 focus:outline-none transition-colors duration-200 ease-in-out">
+                    <div class="flex justify-between items-center">
+                        <h2 class="text-2xl font-semibold text-indigo-400">Projects & Research</h2>
+                        <i class="fas fa-chevron-down transform transition-transform duration-300 text-gray-400"></i>
+                    </div>
+                </button>
+                <div class="section-content text-gray-300">
+                    <div class="mb-6">
+                        <h3 class="text-xl font-semibold text-gray-100 mb-2">Neuromorphic Computing & Moore's Law Decline</h3>
+                        <ul class="custom-ul mt-2 text-gray-300">
+                            <li>Presented a critical analysis of neuromorphic architectures vs. von Neumann models</li>
+                            <li>Focused on energy efficiency, benchmarking challenges, and disruptive AI hardware futures</li>
+                        </ul>
+                    </div>
+                    <div class="mb-6">
+                        <h3 class="text-xl font-semibold text-gray-100 mb-2">Counter-UAS Computer Vision Capstone</h3>
+                         <ul class="custom-ul mt-2 text-gray-300">
+                            <li>Blob detection pipeline using OpenCV and TensorFlow, GPU-optimized via CUDA Python</li>
+                            <li>Investigated GPU bottlenecks and data transfer costs; produced technical report and repo</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-100 mb-2">CUDA Programming Independent Study</h3>
+                        <ul class="custom-ul mt-2 text-gray-300">
+                           <li>Completed NVIDIA "Fundamentals of Accelerated Computing with CUDA Python"</li>
+                           <li>Designed modular code with GPU/CPU hybrid execution options</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Leadership & Honors Section -->
+            <div class="card-bg rounded-lg shadow-md overflow-hidden">
+                <button class="section-title w-full text-left p-4 sm:p-6 focus:outline-none transition-colors duration-200 ease-in-out">
+                    <div class="flex justify-between items-center">
+                        <h2 class="text-2xl font-semibold text-indigo-400">Leadership & Honors</h2>
+                        <i class="fas fa-chevron-down transform transition-transform duration-300 text-gray-400"></i>
+                    </div>
+                </button>
+                <div class="section-content text-gray-300">
+                    <ul class="custom-ul">
+                        <li>94th FTS Summer Squadron Commander | Superintendent | Flight NCO (2020–2022)</li>
+                        <li>Cadet Group 1 Military Training NCOIC | Chief Clerk (Squadrons 3 & Group 1)</li>
+                        <li>Dean’s Pin, Cadet Flight Wings, Glider Wings</li>
+                        <li>CSEAP CIC, ROKAFA Exchange Program Lead (Fall 2021)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Languages Section -->
+            <div class="card-bg rounded-lg shadow-md overflow-hidden">
+                <button class="section-title w-full text-left p-4 sm:p-6 focus:outline-none transition-colors duration-200 ease-in-out">
+                    <div class="flex justify-between items-center">
+                        <h2 class="text-2xl font-semibold text-indigo-400">Languages</h2>
+                        <i class="fas fa-chevron-down transform transition-transform duration-300 text-gray-400"></i>
+                    </div>
+                </button>
+                <div class="section-content text-gray-300">
+                     <ul class="custom-ul">
+                        <li>Korean: DLPT 3/3</li>
+                        <li>Japanese: DLPT 2/1+</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="text-center mt-12 mb-6">
+            <p class="text-gray-500 text-sm">Interactive Resume &copy; <span id="currentYear"></span> David Song. Designed with Tailwind CSS.</p>
+        </footer>
+    </div>
+
+    <script>
+        // JavaScript for accordion functionality
+        const sectionTitles = document.querySelectorAll('.section-title');
+        sectionTitles.forEach(title => {
+            title.addEventListener('click', () => {
+                const content = title.nextElementSibling;
+                const icon = title.querySelector('i');
+
+                // Close other open sections
+                sectionTitles.forEach(otherTitle => {
+                    if (otherTitle !== title) {
+                        const otherContent = otherTitle.nextElementSibling;
+                        const otherIcon = otherTitle.querySelector('i');
+                        if (otherContent.classList.contains('open')) {
+                            otherContent.classList.remove('open');
+                            otherIcon.classList.remove('rotate-180');
+                        }
+                    }
+                });
+
+                // Toggle current section
+                content.classList.toggle('open');
+                icon.classList.toggle('rotate-180');
+            });
+        });
+
+        // Auto-open the first section by default (optional)
+        // if (sectionTitles.length > 0) {
+        //     sectionTitles[0].click(); // Uncomment to open the first section
+        // }
+
+        // Set current year in footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
+
